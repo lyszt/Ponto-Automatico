@@ -17,8 +17,8 @@ if __name__ == '__main__':
 
     load_dotenv()
     login = os.getenv("LOGIN")
-    password = os.getenv("PASSWORD")
-    if login is None or password is None:
+    senha = os.getenv("PASSWORD")
+    if login is None or senha is None:
         dados = easygui.multpasswordbox("Insira o usuário e a senha.", "Bater ponto automático", ["Login", "Senha"])
         login = dados[0]
         senha = dados[1]
@@ -94,4 +94,3 @@ if __name__ == '__main__':
     response = requests.post(url, headers=headers, data=data, cookies=cookies, allow_redirects=True)
 
     print(response.status_code)
-    print(response.text)

@@ -35,7 +35,7 @@ if __name__ == '__main__':
 
 
     options = Options()
-    options.add_argument('--headless')
+    #options.add_argument('--headless')
     options.add_experimental_option("detach", True)
     options.add_argument(f'user-agent={userAgent}')
 
@@ -67,7 +67,6 @@ if __name__ == '__main__':
         "Cache-Control": "max-age=0",
         "Connection": "keep-alive",
         "Content-Type": "application/x-www-form-urlencoded",
-        "Cookie": "_ga=GA1.1.873639881.1733313648; _ga_K02YK0QV33=GS1.1.1733313647.1.0.1733313665.42.0.901069172; JSESSIONID=34D448F5740BC4C7D44EB2DE6AAA19A1.srv-sigrh-01",
         "Host": "sigrh.uffs.edu.br",
         "Origin": "https://sigrh.uffs.edu.br",
         "Referer": "https://sigrh.uffs.edu.br/sigrh/frequencia/ponto_eletronico/cadastro_ponto_eletronico.jsf",

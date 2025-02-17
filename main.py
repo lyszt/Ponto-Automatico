@@ -10,12 +10,13 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from fake_useragent import UserAgent
-
+import easygui
 from dotenv import load_dotenv
 
 if __name__ == '__main__':
     # settar entrada ou saída
-    tipo = "saida"
+    tipo = easygui.buttonbox('Bater entrada ou saida?', 'Bater ponto automático', ['Entrada', 'Saida'])
+    tipo = tipo.lower()
     load_dotenv()
 
     login = os.getenv("LOGIN")

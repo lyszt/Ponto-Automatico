@@ -14,13 +14,18 @@ import easygui
 from dotenv import load_dotenv
 
 if __name__ == '__main__':
+
+    dados = easygui.multpasswordbox("Insira o usuário e a senha.", "Bater ponto automático", ["Login", "Senha"])
+    login = dados[0]
+    senha = dados[1]
+    print(dados)
+
     # settar entrada ou saída
     tipo = easygui.buttonbox('Bater entrada ou saida?', 'Bater ponto automático', ['Entrada', 'Saida'])
     tipo = tipo.lower()
     load_dotenv()
 
-    login = os.getenv("LOGIN")
-    senha = os.getenv("PASSWORD")
+
 
     ua = UserAgent(os='windows')
     userAgent = ua.chrome

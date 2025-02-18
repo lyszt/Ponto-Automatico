@@ -53,6 +53,8 @@ if __name__ == '__main__':
             (By.XPATH, "//td[contains(text(), 'Registro de horário de trabalho')]"))).click()
         WebDriverWait(driver, 4).until(EC.presence_of_element_located((By.ID, "idFormDadosEntradaSaida:idBtnRegistrarSaida"))).click()
 
+        easygui.textbox("Ponto batido com sucesso.", "Bater ponto automático")
     except TimeoutException:
         print("Took to much time to find element.")
-
+    except Exception as e:
+        easygui.textbox(str(e), "Erro detectado:")

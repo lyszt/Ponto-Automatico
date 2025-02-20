@@ -32,7 +32,7 @@ if __name__ == '__main__':
 
 
     options = Options()
-    #options.add_argument('--headless')
+    options.add_argument('--headless')
     #options.add_experimental_option("detach", True)
     options.add_argument(f'user-agent={userAgent}')
 

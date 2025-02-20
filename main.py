@@ -32,7 +32,7 @@ if __name__ == '__main__':
 
 
     options = Options()
-    options.add_argument('--headless')
+    #options.add_argument('--headless')
     #options.add_experimental_option("detach", True)
     options.add_argument(f'user-agent={userAgent}')
 
@@ -51,7 +51,10 @@ if __name__ == '__main__':
             EC.presence_of_element_located((By.XPATH, "//td[contains(text(), 'Ponto Eletrônico')]"))).click()
         WebDriverWait(driver, 4).until(EC.presence_of_element_located(
             (By.XPATH, "//td[contains(text(), 'Registro de horário de trabalho')]"))).click()
-        WebDriverWait(driver, 4).until(EC.presence_of_element_located((By.ID, "idFormDadosEntradaSaida:idBtnRegistrarSaida"))).click()
+        try:
+            WebDriverWait(driver, 4).until(EC.presence_of_element_located((By.ID, "idFormDadosEntradaSaida:idBtnRegistrarEntrada"))).click()
+        except TimeoutException:
+            WebDriverWait(driver, 4).until(EC.presence_of_element_located((By.ID, "idFormDadosEntradaSaida:idBtnRegistrarSaida"))).click()
 
         easygui.textbox("Ponto batido com sucesso.", "Bater ponto automático")
     except TimeoutException:
